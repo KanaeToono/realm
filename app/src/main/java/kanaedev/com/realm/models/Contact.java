@@ -7,22 +7,28 @@ import io.realm.annotations.PrimaryKey;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 
 @Parcel
-@RequiredArgsConstructor(suppressConstructorProperties = true, access = AccessLevel.PUBLIC)
-@AllArgsConstructor(suppressConstructorProperties = true, access = AccessLevel.PUBLIC)
+@EqualsAndHashCode(callSuper = true)
+@RequiredArgsConstructor(suppressConstructorProperties = true, access = AccessLevel.PROTECTED)
+@AllArgsConstructor(suppressConstructorProperties = true, access = AccessLevel.PROTECTED)
 @Data
 public class Contact extends RealmObject {
 
     @PrimaryKey
-    private int id;
+    private int id_contact;
 
-    private String title;
+    private String name_contact;
 
-    private String description;
+    private int sdt_contact;
 
-    private String author;
+    private String address_contact;
 
-    private String imageUrl;
+    private String gender_contact;
+
+    private String date_time_save_contact;
+
+    private String path_image;
 }
